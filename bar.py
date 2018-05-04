@@ -7,8 +7,6 @@ status = Status()
 #                          ^-- calendar week
 
 
-status.register("pulseaudio",
-            format="♪{volume}",)
 
 status.register("clock",
     format="%a %-d %b %X",
