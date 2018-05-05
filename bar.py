@@ -2,22 +2,20 @@ from i3pystatus import Status
 
 status = Status()
 
+terminal = "alacritty"
+
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
-
-
+status.register("text",
+        text="",
+        on_rightclick = "%s -e htop" %(terminal),
+        )
+status.register("clock",
+        format="%X ",)
 
 status.register("clock",
-    format="%a %-d %b %X",
-    on_leftclick = "alacritty -m curl wttr.in"
-   )
-
-status.register("text",
-    text = "",
-    color = "#ececec",
-    # open terminal window running htop
-    on_leftclick = "alacritty",
+        format="%a  %-d %b ",
    )
 
 status.register("text",
@@ -26,8 +24,6 @@ status.register("text",
     # open terminal window running htop
     on_leftclick = "telegram-desktop",
    )
-
-
 
 
 

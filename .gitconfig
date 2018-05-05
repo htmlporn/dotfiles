@@ -1,7 +1,7 @@
 [alias]
 	co = checkout
 	st = status
-	cm = commit -m
+	cm = commit
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [user]
 	email = graycalx2@gmail.com
