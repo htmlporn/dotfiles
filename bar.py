@@ -12,7 +12,7 @@ status.register("text",
         on_rightclick = "%s -e htop" %(terminal),
         )
 status.register("clock",
-        format="%X ",)
+        format="%X",)
 
 status.register("clock",
         format="%a  %-d %b ",
@@ -24,8 +24,11 @@ status.register("text",
     # open terminal window running htop
     on_leftclick = "telegram-desktop",
    )
-
-
-
+status.register("text",
+    text = "",
+    color = "#00FF00",
+    # open terminal window running htop
+    on_leftclick = "rocketchat",
+   )
 
 status.run()

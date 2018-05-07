@@ -1,6 +1,5 @@
 set number "Number line
 set noswapfile
-set nocompatible "Ignored in neovim
 set mouse=a
 set showmode
 set encoding=UTF-8
@@ -8,6 +7,8 @@ set nobackup
 set nowritebackup
 set splitright "Open new split in right side
 set cursorline "Highlight current line
+set colorcolumn=80
+set linespace=5
 
 " Disable arrow keys
 inoremap <Up> <NOP>
@@ -38,8 +39,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=red ctermbg=NONE gui=NONE guifg=Da
 "Close vim with NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:NERDTreeDirArrowExpandable = '~'
-let g:NERDTreeDirArrowCollapsible = '~'
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 filetype off
 syntax enable
@@ -47,6 +48,7 @@ syntax enable
 "Plugins
 call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'
+  Plug 'posva/vim-vue'
   Plug 'scrooloose/nerdtree'
   Plug 'ap/vim-css-color'
   Plug 'alvan/vim-closetag'
@@ -70,3 +72,4 @@ call plug#begin('~/.vim/plugged')
   "deoplete tab-complete
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call plug#end()
+
