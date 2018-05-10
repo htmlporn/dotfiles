@@ -103,3 +103,4 @@ if [ -f /usr/bin/grc ]; then
  alias traceroute="grc --colour=auto traceroute"
 fi
 
+source /usr/share/nvm/init-nvm.sh
