@@ -4,6 +4,7 @@ set mouse=a
 set showmode
 set encoding=UTF-8
 set nobackup
+set incsearch
 set nowritebackup
 set splitright "Open new split in right side
 set cursorline "Highlight current line
@@ -27,7 +28,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 set tabstop=2
 set shiftwidth=2
 set smarttab
-set expandtab
+set expandtab "Insert spaces instead tab-symbol
 set autoindent
 
 let NERDTreeShowHidden=1

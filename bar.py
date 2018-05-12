@@ -11,13 +11,16 @@ status.register("text",
         text="",
         on_rightclick = "%s -e htop" %(terminal),
         )
+
 status.register("clock",
         format="%X",)
 
 status.register("clock",
         format="%a  %-d %b ",
-   )
+        )
 
-
+status.register("text",
+        text="",
+        on_leftclick = "pavucontrol")
 
 status.run()
