@@ -34,7 +34,6 @@ set autoindent
 let NERDTreeShowHidden=1
 
 " Colors
-colorscheme monokai 
 highlight LineNr term=bold cterm=NONE ctermfg=red ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 "Close vim with NERDTree
@@ -56,16 +55,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'bling/vim-airline'
   Plug 'digitaltoad/vim-pug'
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
-    Plug 'wokalski/autocomplete-flow'
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
+  Plug 'tpope/vim-fugitive'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'wokalski/autocomplete-flow'
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+
+  "colorschemes
+  Plug 'morhetz/gruvbox'
 
   let g:deoplete#enable_at_startup = 1
   let g:neosnippet#enable_completed_snippet = 1
@@ -74,3 +71,5 @@ call plug#begin('~/.vim/plugged')
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call plug#end()
 
+colorscheme gruvbox 
+set background=dark
