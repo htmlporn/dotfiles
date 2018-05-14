@@ -10,16 +10,17 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto sans 11
+font pango:Ubuntu Bold 12
 
-gaps inner 8
+gaps inner 16
 gaps outer 8
 
-for_window [class="^.*"] border pixel 1
-new_window 1pixel
+for_window [class="^.*"] border pixel 0
+#new_window 0pixel
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -36,20 +37,22 @@ new_window 1pixel
 floating_modifier $mod
 
 # start a terminal
-
 #bindsym $mod+Return exec mate-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec rofi -show run 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+bindsym Print exec  scrot -e 'xclip -selection clipboard -t "image/png" < $f'
+bindsym Shift+Print exec scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
+bindsym Ctrl+Print exec scrot -u -e 'xclip -selection clipboard -t "image/png" < $f'
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -102,21 +105,21 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Screenshot
-bindsym Print exec mate-screenshot -a
-bindsym Shift+Print exec mate-screenshot -w
+# bindsym Print exec mate-screenshot -a
+# bindsym Shift+Print exec mate-screenshot -w
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 "5: Git "
-set $ws6 ""
-set $ws7 ""
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: Random "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -192,7 +195,6 @@ set $photopea /opt/google/chrome/google-chrome --profile-directory=Default --app
 # Assign Workspaces
 # assign [class="^google-music$"] $ws2
 
-
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -200,13 +202,13 @@ bindsym $mod+r mode "resize"
 
 # Color variables
 set $transparent #00000000
-set $maincolor #40c4ff
-set $darkcolor #000a12
-set $darkcolortr #000a1200
-set $successcolor #087f23
+set $blue #40c4ff
+set $black #282828
+set $green #b7e876
+set $yellow #ffc251
 set $graycolor #78909c
 set $darkgraycolor #263238
-set $warncolor #ff0000
+set $red #ff355b
 
 bar {
   status_command python3 ~/dotfiles/bar.py
@@ -214,12 +216,12 @@ bar {
   colors {
     #statusline #ececec
     separator $darkgraycolor
-    background $darkcolor
+    background $black
 
     #                      BORDER          BACKGROUND         TEXT
-    focused_workspace      $maincolor      $maincolor         $darkcolor
-    inactive_workspace     $darkcolor      $darkcolor         $maincolor
-    active_workspace       $darkcolor      $darkcolor         #ffffff
+    focused_workspace      $blue           $blue              $black
+    inactive_workspace     $black          $black             $blue
+    active_workspace       $black          $black             #ffffff
     urgent_workspace       $warncolor      $warncolor         #ffffff
     binding_mode           $darkred        $darkred           $transparent
   }
@@ -227,8 +229,7 @@ bar {
 
 exec_always feh --bg-fill Pictures/1.jpg 
 exec_always xrandr --output DVI-0 --auto --left-of HDMI-0
-exec_always compton -b
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec_always --no-startup-id compton
+exec_always hsetroot -add "#08AEEA" -add "#2AF5D2" -gradient 0
 
-# Google Play Music
-exec_always [--no-startup-id] $google-music

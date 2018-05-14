@@ -26,8 +26,8 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 4
-    y: 4
+    x: 8
+    y: 8
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
@@ -61,30 +61,30 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "monospace" # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: "monospace" # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
-    family: "monospace" # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 8
+  size: 11
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 3
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
@@ -229,7 +229,7 @@ hide_cursor_when_typing: false
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
+cursor_style: Beam
 
 # Live config reload (changes require restart)
 live_config_reload: true
