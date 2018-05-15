@@ -41,6 +41,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
 
 filetype off
 syntax enable
@@ -48,6 +50,7 @@ syntax enable
 "Plugins
 call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'
+  Plug 'tpope/vim-pathogen'
   Plug 'posva/vim-vue'
   Plug 'scrooloose/nerdtree'
   Plug 'ap/vim-css-color'
@@ -63,11 +66,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'morhetz/gruvbox'
   Plug 'airblade/vim-gitgutter'
+  Plug 'nathanaelkane/vim-indent-guides'
 
   let g:deoplete#enable_at_startup = 1
   let g:neosnippet#enable_completed_snippet = 1
 
-  "deoplete tab-complete
+   "deoplete tab-complete
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call plug#end()
 
