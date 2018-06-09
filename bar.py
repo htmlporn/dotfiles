@@ -12,8 +12,18 @@ status.register("text",
         on_rightclick = "%s -e htop" %(terminal),
         )
 
+status.register("battery",
+    format="{status} {remaining:%E%hh:%Mm}",
+    alert=True,
+    alert_percentage=5,
+    status={
+        "DIS":  "Discharging",
+        "CHR":  "Charging",
+        "FULL": "100%",
+    })
+
 status.register("clock",
-        format="%X",)
+        format="%H:%M",)
 
 status.register("clock",
         format="%a  %-d %b ",
