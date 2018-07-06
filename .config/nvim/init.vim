@@ -10,6 +10,7 @@ set splitright "Open new split in right side
 set cursorline "Highlight current line
 set colorcolumn=80
 set linespace=5
+set clipboard+=unnamedplus
 
 " Disable arrow keys
 inoremap <Up> <NOP>
@@ -31,7 +32,14 @@ set smarttab
 set expandtab "Insert spaces instead tab-symbol
 set autoindent
 
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 0
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv<Paste>
 
 " Colors
 highlight LineNr term=bold cterm=NONE ctermfg=red ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -50,13 +58,13 @@ syntax enable
 "Plugins
 call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'
-  Plug 'tpope/vim-pathogen'
   Plug 'posva/vim-vue'
   Plug 'scrooloose/nerdtree'
   Plug 'ap/vim-css-color'
   Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim'
   Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'digitaltoad/vim-pug'
   Plug 'tpope/vim-fugitive'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -67,6 +75,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'airblade/vim-gitgutter'
   Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'vim-scripts/MatchTag'
+  Plug 'crusoexia/vim-monokai'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'scrooloose/nerdcommenter'
+  " Plug 'vim-syntastic/syntastic'
+" Linters
+  " Plug 'pugjs/pug-lint'
 
   let g:deoplete#enable_at_startup = 1
   let g:neosnippet#enable_completed_snippet = 1
@@ -75,5 +90,9 @@ call plug#begin('~/.vim/plugged')
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call plug#end()
 
-colorscheme gruvbox 
+colorscheme monokai
+let g:airline_theme = 'wombat'
 set background=dark
+
+
+

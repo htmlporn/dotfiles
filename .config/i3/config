@@ -49,9 +49,6 @@ bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym Print exec  scrot -e 'xclip -selection clipboard -t "image/png" < $f'
-bindsym Shift+Print exec scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
-bindsym Ctrl+Print exec scrot -u -e 'xclip -selection clipboard -t "image/png" < $f'
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -227,11 +224,11 @@ bar {
   }
 }
 
-exec_always feh --bg-fill pictures/wp/1.jpg 
+exec_always feh --bg-fill pictures/wp/1.png
+exec --no-startup-id cbatticon -i symbolic
 exec_always xrandr --output LVDS-1 --auto --left-of VGA-1
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
-exec_always --no-startup-id compton
-exec_always hsetroot -add "#08AEEA" -add "#2AF5D2" -gradient 0
+exec --no-startup-id compton
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
