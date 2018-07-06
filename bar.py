@@ -20,24 +20,8 @@ status.register("clock",
 
 
 
-status.register("battery",
-        format='{percentage: .0f}% {remaining:%E%hh:%Mm} {status}',
-        alert=True,
-        alert_percentage=5,
-        status={
-        "DIS":  "",
-        "CHR":  "",
-        "FULL": "",
-    })
-
 status.register("text",
         text="",
         on_leftclick = "pavucontrol")
-
-status.register("network",
-        interface="wlp3s0",
-        hints={"markup": "pango"},
-        on_leftclick="ip addr show dev {interface} | xmessage -file -" 
-    )
 
 status.run()
