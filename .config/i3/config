@@ -22,17 +22,6 @@ gaps outer 8
 for_window [class="^.*"] border pixel 0
 #new_window 0pixel
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -50,10 +39,10 @@ bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -72,9 +61,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -159,15 +145,15 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 pptRRR
+        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+rR
@@ -207,25 +193,11 @@ set $graycolor #78909c
 set $darkgraycolor #263238
 set $red #ff355b
 
-bar {
-  status_command python3 ~/dotfiles/bar.py
-  position top
-  colors {
-    #statusline #ececec
-    separator $darkgraycolor
-    background $black
 
-    #                      BORDER          BACKGROUND         TEXT
-    focused_workspace      $blue           $blue              $black
-    inactive_workspace     $black          $black             $blue
-    active_workspace       $black          $black             #ffffff
-    urgent_workspace       $warncolor      $warncolor         #ffffff
-    binding_mode           $darkred        $darkred           $transparent
-  }
-}
 
-exec_always feh --bg-fill pictures/wp/1.png
-exec --no-startup-id cbatticon -i symbolic
+exec --no-startup-id ~/.fehbg
+# exec --no-startup-id cbatticon -i symbolic
+exec --no-startup-id polybar example
 exec_always xrandr --output LVDS-1 --auto --left-of VGA-1
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec --no-startup-id compton
