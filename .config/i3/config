@@ -5,7 +5,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -87,7 +86,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Screenshot
-# bindsym Print exec mate-screenshot -a
+ bindsym Print exec xfce4-screenshooter
 # bindsym Shift+Print exec mate-screenshot -w
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -195,9 +194,9 @@ set $red #ff355b
 
 
 
-exec --no-startup-id ~/.fehbg
+exec ~/.fehbg
 # exec --no-startup-id cbatticon -i symbolic
-exec --no-startup-id polybar example
+exec polybar example
 exec_always xrandr --output LVDS-1 --auto --left-of VGA-1
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec --no-startup-id compton

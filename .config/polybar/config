@@ -3,22 +3,22 @@ background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = #ececec
+secondary = #ececec
+alert = #ececec
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 21
 
 radius = 3.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 0
 line-color = #f00
 
 border-size = 4
