@@ -25,6 +25,8 @@ noremap <Right> <NOP>
 "Toggle NERDTree hotkey
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+nmap <F8> :TagbarToggle<CR>
+
 "Indent
 set tabstop=2
 set shiftwidth=2
@@ -72,13 +74,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'morhetz/gruvbox'
+  "Plug 'morhetz/gruvbox'
   Plug 'airblade/vim-gitgutter'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'vim-scripts/MatchTag'
   Plug 'crusoexia/vim-monokai'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdcommenter'
+  Plug 'hushicai/tagbar-javascript.vim'
+  Plug 'majutsushi/tagbar'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'
