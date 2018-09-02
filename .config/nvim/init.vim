@@ -83,6 +83,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'hushicai/tagbar-javascript.vim'
   Plug 'majutsushi/tagbar'
+  Plug 'w0rp/ale'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'
