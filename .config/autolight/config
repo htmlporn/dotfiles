@@ -1,0 +1,21 @@
+[autolight]
+# Interval (in seconds) to read light sensor
+INTERVAL=3
+# Max/min illumination values to act on from sensor
+MAX_ILLUM=500
+MIN_ILLUM=22
+# Max/min brightness values, as percentage of max
+# (real) brightness. 'light' is used to adjust based
+# on this percentage
+MAX_BRIGHT=100
+MIN_BRIGHT=20
+# Sensor device to read from. May require acpi_alp driver!
+ALP_DEVICE=/sys/bus/iio/devices/iio:device0/in_illuminance_raw
+# Enable debug output
+DEBUG=False
+# Path to 'light' application
+LIGHT=/usr/bin/light
+# Enable smooth transitioning between different brightness settings.
+# Warning: This is experimental, unoptimized, and will likely lead to higher
+# battery consumption.
+SMOOTH=False

@@ -11,6 +11,8 @@ set cursorline "Highlight current line
 set colorcolumn=80
 set linespace=5
 set clipboard+=unnamedplus
+set linebreak
+set ic
 
 " Disable arrow keys
 inoremap <Up> <NOP>
@@ -31,7 +33,6 @@ nmap <F8> :TagbarToggle<CR>
 set tabstop=2
 set shiftwidth=2
 set smarttab
-set expandtab "Insert spaces instead tab-symbol
 set autoindent
 
 let NERDTreeShowHidden = 0
@@ -41,7 +42,7 @@ nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv<Paste>
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Colors
 highlight LineNr term=bold cterm=NONE ctermfg=red ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -84,6 +85,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'hushicai/tagbar-javascript.vim'
   Plug 'majutsushi/tagbar'
   Plug 'w0rp/ale'
+  Plug 'mxw/vim-jsx'
+  Plug 'kien/ctrlp.vim'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'
@@ -97,7 +100,4 @@ call plug#end()
 
 colorscheme monokai
 let g:airline_theme = 'wombat'
-set background=dark
-
-
 
