@@ -87,6 +87,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'w0rp/ale'
   Plug 'mxw/vim-jsx'
   Plug 'kien/ctrlp.vim'
+	Plug 'connorholyday/vim-snazzy'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'
@@ -98,6 +99,6 @@ call plug#begin('~/.vim/plugged')
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call plug#end()
 
-colorscheme monokai
+colorscheme snazzy
 let g:airline_theme = 'wombat'
 

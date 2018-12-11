@@ -177,7 +177,7 @@ set $graycolor #78909c
 set $darkgraycolor #263238
 set $red #ff355b
 
-exec arandr -e ~/.screenlayout/1.sh
+exec --no-startup-id ~/.screenlayout/1.sh
 exec ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle

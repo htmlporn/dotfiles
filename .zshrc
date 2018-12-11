@@ -20,3 +20,7 @@ if [ -f /usr/bin/grc ]; then
  alias traceroute="grc --colour=auto traceroute"
 fi
 
+alias open=xdg-open
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
