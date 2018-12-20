@@ -6,6 +6,9 @@ plugins=(
   git
   zsh-syntax-highlighting
   tldr
+	vi-mode
+	frontend-search
+	calc
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -21,6 +24,8 @@ if [ -f /usr/bin/grc ]; then
 fi
 
 alias open=xdg-open
+alias :q=exit
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads 

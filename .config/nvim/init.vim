@@ -28,7 +28,6 @@ noremap <Right> <NOP>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
-
 "Indent
 set tabstop=2
 set shiftwidth=2
@@ -79,7 +78,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'vim-scripts/MatchTag'
-  Plug 'crusoexia/vim-monokai'
+  "Plug 'crusoexia/vim-monokai'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdcommenter'
   Plug 'hushicai/tagbar-javascript.vim'
@@ -88,6 +87,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mxw/vim-jsx'
   Plug 'kien/ctrlp.vim'
 	Plug 'connorholyday/vim-snazzy'
+	Plug 'leafgarland/typescript-vim'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'
@@ -102,3 +102,6 @@ call plug#end()
 colorscheme snazzy
 let g:airline_theme = 'wombat'
 
+" Set transparent bg
+hi NonText ctermbg=none
+hi Normal guibg=NONE ctermbg=NONE
