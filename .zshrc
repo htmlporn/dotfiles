@@ -9,6 +9,7 @@ plugins=(
 	vi-mode
 	frontend-search
 	calc
+	history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh

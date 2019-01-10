@@ -191,4 +191,5 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86Launch1 exec --no-startup-id alacritty -e nvim
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-sink-input-mute @DEFAULT_SINK@ toggle # mute sound
 exec --no-startup-id dockd --daemon
+exec_always --no-startup-id xset led
 bindsym $mod+p exec /home/fami/.config/i3/i3lock-multimonitor/lock
