@@ -184,6 +184,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec_always --no-startup-id compton
 exec_always --no-startup-id twmnd
+exec --no-startup-id redshift-gtk
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
