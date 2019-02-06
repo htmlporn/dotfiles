@@ -24,10 +24,13 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+cnoremap help vert help
+
 "Toggle NERDTree hotkey
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 nmap <F8> :TagbarToggle<CR>
+:command W w
 "Indent
 set tabstop=2
 set shiftwidth=2

@@ -152,6 +152,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bar {
+        status_command i3status
+				position top
+}
 
 #workspace $ws1 output HDMI-0
 #workspace $ws2 output HDMI-0
