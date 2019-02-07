@@ -26,6 +26,7 @@ fi
 
 alias open=xdg-open
 alias :q=exit
+alias tmux=tmux -u
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
