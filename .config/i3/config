@@ -1,17 +1,28 @@
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 set $term alacritty
 
+# Color variables
+set $transparent #00000000
+set $blue #4DD0E1
+set $black #212121
+set $green #AED581
+set $yellow #FFF176
+set $graycolor #424242
+set $darkgraycolor #212121
+set $red #E57373
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Ubuntu Regular 10
+font pango:Noto Sans Regular 9.5
+
+title_align center
 
 gaps inner 4
 gaps outer 4
 
-for_window [class="^.*"] border pixel 0
-#new_window 0pixel
+#for_window [class="^.*"] border pixel 0
+#new_window 1pixel
+new_window normal 0 px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -153,9 +164,30 @@ mode "resize" {
 }
 
 bar {
-        status_command i3status
-				position top
+		status_command i3status --config ~/.config/i3/i3status.conf
+
+		#status_command    python ~/.config/i3/i3py.py
+    workspace_buttons yes
+
+		position top
+		colors {
+			background $black
+			statusline #ffffff
+			separator $darkgraycolor
+		 	#                  border  		backgr.    text
+		 	focused_workspace  $gray 	  	$gray     $black
+		 	active_workspace   #333333 #5f676a #ffffff
+		 	inactive_workspace #333333 #222222 #888888
+		 	urgent_workspace   $red 			$red      #ffffff
+		}
 }
+
+# set some nice colors      border     					background  text
+client.focused              $black     					$black      #ffffff
+client.unfocused            $graycolor        	$graycolor         $graycolor
+client.focused_inactive     $darkgraycolor      $darkgraycolor     $gray
+client.urgent               $red        					$red      #ffffff
+
 
 #workspace $ws1 output HDMI-0
 #workspace $ws2 output HDMI-0
@@ -171,16 +203,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-
-# Color variables
-set $transparent #00000000
-set $blue #40c4ff
-set $black #282828
-set $green #b7e876
-set $yellow #ffc251
-set $graycolor #78909c
-set $darkgraycolor #263238
-set $red #ff355b
 
 exec --no-startup-id ~/.screenlayout/1.sh
 exec ~/.fehbg
