@@ -62,6 +62,7 @@ syntax enable
 
 "Plugins
 call plug#begin('~/.vim/plugged')
+	Plug 'junegunn/vader.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'posva/vim-vue'
   Plug 'scrooloose/nerdtree'
@@ -91,6 +92,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
 	Plug 'connorholyday/vim-snazzy'
 	Plug 'leafgarland/typescript-vim'
+	Plug 'joegesualdo/jsdoc.vim'
   " Plug 'vim-syntastic/syntastic'
 " Linters
   " Plug 'pugjs/pug-lint'

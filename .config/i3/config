@@ -18,7 +18,7 @@ font pango:Noto Sans Regular 9.5
 title_align center
 
 gaps inner 4
-gaps outer 4
+gaps outer 0
 
 #for_window [class="^.*"] border pixel 0
 #new_window 1pixel
@@ -37,8 +37,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun -theme solarized -font "Noto Sans 10" drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -88,21 +88,21 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Screenshot
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec flameshot gui
 # bindsym Shift+Print exec mate-screenshot -w
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
+set $ws2 "2: "
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -165,6 +165,7 @@ mode "resize" {
 
 bar {
 		status_command i3status --config ~/.config/i3/i3status.conf
+		#status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 		#status_command    python ~/.config/i3/i3py.py
     workspace_buttons yes
@@ -172,21 +173,21 @@ bar {
 		position top
 		colors {
 			background $black
-			statusline #ffffff
+			statusline #cdcdcd
 			separator $darkgraycolor
-		 	#                  border  		backgr.    text
-		 	focused_workspace  $gray 	  	$gray     $black
-		 	active_workspace   #333333 #5f676a #ffffff
-		 	inactive_workspace #333333 #222222 #888888
-		 	urgent_workspace   $red 			$red      #ffffff
+		 	#                  border  			      backgr.         text
+		 	focused_workspace  $graycolor 	      $graycolor      #cdcdcd
+		 	active_workspace   #333333            #5f676a 				#ffffff
+		 	inactive_workspace $darkgraycolor     $darkgraycolor 	#cdcdcd
+		 	urgent_workspace   $red 							$red  			   	#cdcdcd
 		}
 }
 
-# set some nice colors      border     					background  text
-client.focused              $black     					$black      #ffffff
-client.unfocused            $graycolor        	$graycolor         $graycolor
-client.focused_inactive     $darkgraycolor      $darkgraycolor     $gray
-client.urgent               $red        					$red      #ffffff
+# set some nice colors      border     					background  				text
+client.focused              $black     					$black      				#cdcdcd
+client.unfocused            $graycolor        	$graycolor          #cdcdcd
+client.focused_inactive     $darkgraycolor      $darkgraycolor     	$gray
+client.urgent               $red        				$red      					#cdcdcd
 
 
 #workspace $ws1 output HDMI-0
