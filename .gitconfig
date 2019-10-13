@@ -1,8 +1,11 @@
 [alias]
-	co = checkout
-	st = status
-	cm = commit
+	co   = checkout
+	st   = status
+	cm   = commit
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	go 	 = checkout
+	type = cat-file -t
+	dump = cat-file -d
 [user]
 	email = graycalx2@gmail.com
 	name = den
