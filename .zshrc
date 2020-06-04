@@ -1,14 +1,11 @@
-export ZSH=/home/fami/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 
 plugins=(
   git
-  zsh-syntax-highlighting
-  tldr
 	vi-mode
 	frontend-search
-	calc
 	history-substring-search
 )
 
