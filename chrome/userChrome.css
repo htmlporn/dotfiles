@@ -1,0 +1,10 @@
+:root {
+  --sidebar-hover-width: 4px;
+  --sidebar-visible-width: 200px;
+}
+
+#TabsToolbar { visibility: collapse !important; }
+
+#sidebar-header {
+  display: none !important;
+}
