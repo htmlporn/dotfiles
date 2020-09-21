@@ -21,7 +21,6 @@ if [ -f /usr/bin/grc ]; then
  alias traceroute="grc --colour=auto traceroute"
 fi
 
-alias open=xdg-open
 alias :q=exit
 alias tmux=tmux -u
 
