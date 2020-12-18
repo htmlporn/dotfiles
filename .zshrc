@@ -21,8 +21,10 @@ if [ -f /usr/bin/grc ]; then
  alias traceroute="grc --colour=auto traceroute"
 fi
 
+alias cat=bat
 alias :q=exit
 alias tmux=tmux -u
+alias git-clean="git checkout master && git pull origin master && git branch | grep -v "master" | xargs git branch -D"
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
