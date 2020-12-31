@@ -101,5 +101,13 @@ set foldmethod=syntax
 nmap <Leader>py <Plug>(Prettier)
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" NerdTree "
+""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 
 let g:airline#extensions#tabline#enabled = 1
