@@ -1,4 +1,5 @@
 export ZSH=~/.oh-my-zsh
+export LC_ALL=en_US.UTF-8
 
 ZSH_THEME="agnoster"
 
@@ -28,3 +29,4 @@ alias tmux=tmux -u
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads 
+source /home/fami/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
