@@ -111,3 +111,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 
 let g:airline#extensions#tabline#enabled = 1
+
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact

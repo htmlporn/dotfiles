@@ -21,6 +21,13 @@ if [ -f /usr/bin/grc ]; then
  alias traceroute="grc --colour=auto traceroute"
 fi
 
+alias nvim-plug-install="sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
+
+alias basic="~/.basic/basic"
+
+alias ydl="youtube-dl -ciw $1 --format \"bestvideo+bestaudio[ext=m4a]/bestvideo+bestaudio/best\" --merge-output-format mp4"
+
 alias cat=bat
 alias :q=exit
 alias tmux=tmux -u
@@ -29,3 +36,6 @@ alias git-clean="git checkout master && git pull origin master && git branch | g
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads 
+
+export DENO_INSTALL="/Users/fami/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
